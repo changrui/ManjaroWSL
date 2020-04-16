@@ -12,7 +12,7 @@ based on [wsldl](https://github.com/yuk7/wsldl)
 * Windows Subsystem for Linux feature is enabled.
 
 ## Install
-1. [Download](https://gitlab.com/sileshn/SolusWSL/-/releases) installer zip
+1. [Download](https://github.com/sileshn/SolusWSL/releases/latest) installer zip
 2. Extract all files in zip file to same directory
 3. Run Solus.exe to Extract rootfs and Register to WSL
 
