@@ -122,6 +122,10 @@ Execute the command below in a windows cmd terminal from the directory where Sol
 
 ## How to build
 
+#### Prerequisites
+
+Docker, tar, zip, unzip need to be installed.
+
 If you want to build using solus unstable profile, checkout the unstable branch before running the following commands.
 ```dos
 git clone git@gitlab.com:sileshn/SolusWSL.git
