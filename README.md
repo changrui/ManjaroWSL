@@ -7,7 +7,7 @@ based on [wsldl](https://github.com/yuk7/wsldl)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 ![License](https://img.shields.io/github/license/yosukes-dev/FedoraWSL.svg?style=flat-square)
 
-## 💻Requirements
+## 💻 Requirements
 * Windows 10 1709 Fall Creators Update 64bit or later.
 * Windows Subsystem for Linux feature is enabled.
 
@@ -29,7 +29,7 @@ You can also set wsl2 as default. Use the command below before running Solus.exe
 wsl --set-default-version 2
 ```
 
-## 📝How-to-Use(for Installed Instance)
+## How-to-Use(for Installed Instance)
 #### exe Usage
 ```
 Usage :
@@ -99,12 +99,12 @@ Usage :
 >{InstanceName}.exe config --default-term wt
 ```
 
-## 🛠 How to setup
+## How to setup
 
 Open Solus.exe and run the following commands.
 ```dos
 passwd
-sudo sed -i 's#\# %wheel ALL=(ALL) ALL#%wheel ALL=(ALL) ALL#g' /etc/sudoers
+sed -i 's#\# %wheel ALL=(ALL) ALL#%wheel ALL=(ALL) ALL#g' /etc/sudoers
 useradd -m -G wheel -s /bin/bash <username>
 passwd <username>
 exit
@@ -126,7 +126,7 @@ Execute the command below in a windows cmd terminal from the directory where Sol
 
 Docker, tar, zip, unzip need to be installed.
 
-If you want to build using solus unstable profile, checkout the unstable branch before running the following commands.
+If you want to build using solus unstable profile, checkout the unstable branch.
 ```dos
 git clone git@gitlab.com:sileshn/SolusWSL.git
 cd SolusWSL
