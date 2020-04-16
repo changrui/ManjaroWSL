@@ -1,4 +1,4 @@
-OUT_ZIP=Solus-unstable.zip
+OUT_ZIP=Solus-main.zip
 LNCR_EXE=Solus.exe
 
 DLR=curl
@@ -43,7 +43,7 @@ rootfs: base.tar
 
 base.tar:
 	@echo -e '\e[1;31mExporting base.tar using docker...\e[m'
-	docker run --name soluswsl sileshnair/solus-base:unstable /bin/bash -c "eopkg up; eopkg it rsync openssh; eopkg dc;"
+	docker run --name soluswsl sileshnair/solus-base:main /bin/bash -c "eopkg up; eopkg it rsync openssh; eopkg dc;"
 	docker export --output=base.tar soluswsl
 	docker rm -f soluswsl
 
@@ -56,4 +56,4 @@ clean:
 	-rm rootfs.tar.gz
 	-sudo rm -r rootfs
 	-rm base.tar
-	-docker rmi sileshnair/solus-base:unstable
+	-docker rmi sileshnair/solus-base:main
