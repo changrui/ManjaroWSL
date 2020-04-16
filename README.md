@@ -121,13 +121,15 @@ Execute the command below in a windows cmd terminal from the directory where Sol
 ```
 
 ## How to build
+
+If you want to build using solus unstable profile, checkout the unstable branch before running the following commands.
 ```dos
 git clone git@gitlab.com:sileshn/SolusWSL.git
 cd SolusWSL
 make
 
 ```
-Move the Solus.zip file to a safe location and run the command below to clean.
+Copy the Solus-main.zip file to a safe location and run the command below to clean.
 ```dos
 make clean
 
