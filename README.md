@@ -119,3 +119,16 @@ Execute the command below in a windows cmd terminal from the directory where Sol
 >Solus.exe clean
 
 ```
+
+## How to build
+```dos
+git clone git@gitlab.com:sileshn/SolusWSL.git
+cd SolusWSL
+make
+
+```
+Move the Solus.zip file to a safe location and run the command below to clean.
+```dos
+make clean
+
+```
