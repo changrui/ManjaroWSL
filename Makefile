@@ -56,4 +56,4 @@ clean:
 	-rm rootfs.tar.gz
 	-sudo rm -r rootfs
 	-rm base.tar
-	-docker rmi sileshnair/solus-base:main
+	-docker rmi sileshnair/solus-base:main -f
