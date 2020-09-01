@@ -1,4 +1,4 @@
-OUT_ZIP=Solus-main.zip
+OUT_ZIP=Solus.zip
 LNCR_EXE=Solus.exe
 
 DLR=curl
@@ -50,6 +50,7 @@ base.tar:
 clean:
 	@echo -e '\e[1;31mCleaning files...\e[m'
 	-rm ${OUT_ZIP}
+	-rm Solus.zip
 	-rm -r ziproot
 	-rm Launcher.exe
 	-rm icons.zip
