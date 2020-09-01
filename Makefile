@@ -43,7 +43,7 @@ rootfs: base.tar
 
 base.tar:
 	@echo -e '\e[1;31mExporting base.tar using docker...\e[m'
-	docker run --name soluswsl sileshnair/solus-base:main /bin/bash -c "mkdir -p /dev/shm; chmod 777 /dev/shm; eopkg up; eopkg it rsync openssh; eopkg dc;"
+	docker run --name soluswsl silkeh/solus:ypkg /bin/bash -c "eopkg up -y; eopkg it -y rsync openssh; eopkg dc;"
 	docker export --output=base.tar soluswsl
 	docker rm -f soluswsl
 
@@ -56,4 +56,4 @@ clean:
 	-rm rootfs.tar.gz
 	-sudo rm -r rootfs
 	-rm base.tar
-	-docker rmi sileshnair/solus-base:main -f
+	-docker rmi silkeh/solus:ypkg -f
