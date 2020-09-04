@@ -1,10 +1,10 @@
-OUT_ZIP=Solus.zip
-LNCR_EXE=Solus.exe
+OUT_ZIP=Manjaro.zip
+LNCR_EXE=Manjaro.exe
 
 DLR=curl
 DLR_FLAGS=-L
-LNCR_ZIP_URL=https://gitlab.com/sileshn/wsldl/uploads/a7c3c412c7bfaf64f02b7035270eb522/icons.zip
-LNCR_ZIP_EXE=Solus.exe
+LNCR_ZIP_URL=https://gitlab.com/sileshn/wsldl/uploads/3ea58028ae3839ffa6ab53cdefbcded5/icons.zip
+LNCR_ZIP_EXE=Manjaro.exe
 
 all: $(OUT_ZIP)
 
@@ -43,18 +43,17 @@ rootfs: base.tar
 
 base.tar:
 	@echo -e '\e[1;31mExporting base.tar using docker...\e[m'
-	docker run --name soluswsl silkeh/solus:ypkg /bin/bash -c "eopkg up -y; eopkg it -y rsync openssh; eopkg dc;"
-	docker export --output=base.tar soluswsl
-	docker rm -f soluswsl
+	docker run --name manjarowsl sileshnair/manjaro:testing /bin/bash -c "pacman -Syyu"
+	docker export --output=base.tar manjarowsl
+	docker rm -f manjarowsl
 
 clean:
 	@echo -e '\e[1;31mCleaning files...\e[m'
 	-rm ${OUT_ZIP}
-	-rm Solus.zip
 	-rm -r ziproot
 	-rm Launcher.exe
 	-rm icons.zip
 	-rm rootfs.tar.gz
 	-sudo rm -r rootfs
 	-rm base.tar
-	-docker rmi silkeh/solus:ypkg -f
+	-docker rmi sileshnair/manjaro:testing -f
