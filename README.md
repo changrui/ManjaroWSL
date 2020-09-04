@@ -1,8 +1,8 @@
-# SolusWSL
-Solus on WSL2 (Windows 10 FCU or later)
+# ManjaroWSL
+Manjaro on WSL2 (Windows 10 FCU or later)
 based on [wsldl](https://github.com/yuk7/wsldl)
 
-![screenshot](https://raw.githubusercontent.com/sileshn/SolusWSL/main/img/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/sileshn/ManjaroWSL/main/img/screenshot.png)
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 ![License](https://img.shields.io/github/license/yosukes-dev/FedoraWSL.svg?style=flat-square)
@@ -12,19 +12,19 @@ based on [wsldl](https://github.com/yuk7/wsldl)
 * Windows Subsystem for Linux feature is enabled.
 
 ## Install
-1. [Download](https://github.com/sileshn/SolusWSL/releases/latest) installer zip
+1. [Download](https://github.com/sileshn/ManjaroWSL/releases/latest) installer zip
 2. Extract all files in zip file to same directory
-3. Run Solus.exe to Extract rootfs and Register to WSL
+3. Run Manjaro.exe to Extract rootfs and Register to WSL
 
 **Note:**
 Exe filename is using the instance name to register. If you rename it you can register with a diffrent name and have multiple installs.
 
 If you want to use WSL2 after install, convert it with the following command.
 ```dos
-wsl --set-version Solus 2
+wsl --set-version Manjaro 2
 ```
 
-You can also set wsl2 as default. Use the command below before running Solus.exe.
+You can also set wsl2 as default. Use the command below before running Manjaro.exe.
 ```dos
 wsl --set-default-version 2
 ```
@@ -101,22 +101,21 @@ Usage :
 
 ## How to setup
 
-Open Solus.exe and run the following commands.
+Open Manjaro.exe and run the following commands.
 ```dos
 passwd
-sed -i 's#\# %wheel ALL=(ALL) ALL#%wheel ALL=(ALL) ALL#g' /etc/sudoers
 useradd -m -G wheel -s /bin/bash <username>
 passwd <username>
 exit
 ```
-Execute the command below in a windows cmd terminal from the directory where Solus.exe is installed.
+Execute the command below in a windows cmd terminal from the directory where Manjaro.exe is installed.
 ```dos
->Solus.exe config --default-user <username>
+>Manjaro.exe config --default-user <username>
 ```
 
 ## How to uninstall instance
 ```dos
->Solus.exe clean
+>Manjaro.exe clean
 
 ```
 
@@ -126,14 +125,13 @@ Execute the command below in a windows cmd terminal from the directory where Sol
 
 Docker, tar, zip, unzip need to be installed.
 
-If you want to build using solus unstable profile, checkout the unstable branch.
 ```dos
-git clone git@gitlab.com:sileshn/SolusWSL.git
-cd SolusWSL
+git clone git@gitlab.com:sileshn/ManjaroWSL.git
+cd ManjaroWSL
 make
 
 ```
-Copy the Solus-main.zip file to a safe location and run the command below to clean.
+Copy the Manjaro.zip file to a safe location and run the command below to clean.
 ```dos
 make clean
 
