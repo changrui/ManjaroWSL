@@ -43,7 +43,7 @@ rootfs: base.tar
 
 base.tar:
 	@echo -e '\e[1;31mExporting base.tar using docker...\e[m'
-	docker run --name manjarowsl sileshnair/manjaro:testing /bin/bash -c "pacman -Syyu"
+	docker run --name manjarowsl sileshnair/manjaro:testing /bin/bash -c "pacman -Syyu; yes | LC_ALL=en_US.UTF-8 pacman -Scc"
 	docker export --output=base.tar manjarowsl
 	docker rm -f manjarowsl
 
