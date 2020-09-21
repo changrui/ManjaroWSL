@@ -43,7 +43,7 @@ rootfs: base.tar
 
 base.tar:
 	@echo -e '\e[1;31mExporting base.tar using docker...\e[m'
-	docker run --name manjarowsl sileshnair/manjaro:testing /bin/bash -c "pacman -Syyu; yes | LC_ALL=en_US.UTF-8 pacman -Scc"
+	docker run --name manjarowsl manjarolinux/base:latest /bin/bash -c "yes | LC_ALL=en_US.UTF-8 pacman -Sy awk; pacman-key --init; pacman-key --populate archlinux; yes | LC_ALL=en_US.UTF-8 pacman -Syyu; pacman-mirrors --api --set-branch testing; pacman-mirrors --fasttrack 5; yes | LC_ALL=en_US.UTF-8 pacman -Syyu; yes | LC_ALL=en_US.UTF-8 pacman -Scc"
 	docker export --output=base.tar manjarowsl
 	docker rm -f manjarowsl
 
@@ -56,4 +56,4 @@ clean:
 	-rm rootfs.tar.gz
 	-sudo rm -r rootfs
 	-rm base.tar
-	-docker rmi sileshnair/manjaro:testing -f
+	-docker rmi manjarolinux/base:latest -f
