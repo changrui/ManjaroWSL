@@ -1,10 +1,10 @@
-OUT_ZIP=Fedora31.zip
-LNCR_EXE=Fedora31.exe
+OUT_ZIP=Manjaro.zip
+LNCR_EXE=Manjaro.exe
 
 DLR=curl
 DLR_FLAGS=-L
-LNCR_ZIP_URL=https://github.com/yuk7/wsldl/releases/download/20040300/icons.zip
-LNCR_ZIP_EXE=Fedora.exe
+LNCR_ZIP_URL=https://gitlab.com/sileshn/wsldl/uploads/3ea58028ae3839ffa6ab53cdefbcded5/icons.zip
+LNCR_ZIP_EXE=Manjaro.exe
 
 all: $(OUT_ZIP)
 
@@ -43,9 +43,9 @@ rootfs: base.tar
 
 base.tar:
 	@echo -e '\e[1;31mExporting base.tar using docker...\e[m'
-	docker run --name fedorawsl library/fedora:31 /bin/bash -c "dnf update -y; rpm -e --nodeps sudo; dnf clean all; pwconv; grpconv; chmod 0744 /etc/shadow; chmod 0744 /etc/gshadow;"
-	docker export --output=base.tar fedorawsl
-	docker rm -f fedorawsl
+	docker run --name manjarowsl sileshnair/manjaro:testing /bin/bash -c "pacman -Syyu"
+	docker export --output=base.tar manjarowsl
+	docker rm -f manjarowsl
 
 clean:
 	@echo -e '\e[1;31mCleaning files...\e[m'
@@ -56,4 +56,4 @@ clean:
 	-rm rootfs.tar.gz
 	-sudo rm -r rootfs
 	-rm base.tar
-	-docker rmi library/fedora:31
+	-docker rmi sileshnair/manjaro:testing -f
