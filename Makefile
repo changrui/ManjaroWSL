@@ -43,7 +43,7 @@ rootfs: base.tar
 
 base.tar:
 	@echo -e '\e[1;31mExporting base.tar using docker...\e[m'
-	docker run --name manjarowsl manjarolinux/base:latest /bin/bash -c "pacman --noconfirm -Sy awk; pacman-key --init; pacman-key --populate archlinux; pacman --noconfirm -Syyu; pacman-mirrors --api --set-branch testing; pacman-mirrors --fasttrack 5; pacman --noconfirm -Syyu; pacman --noconfirm -S base-devel aria2 ccache git git-lfs lzip grep inetutils linux-tools nano openssh procps sudo tree vivid wget; yes | LC_ALL=en_US.UTF-8 pacman -Scc"
+	docker run --name manjarowsl manjarolinux/base:latest /bin/bash -c "pacman --noconfirm -Sy awk; pacman-key --init; pacman-key --populate archlinux; pacman --noconfirm -Syyu; pacman-mirrors --api --set-branch testing; pacman-mirrors --fasttrack 5; pacman --noconfirm -Syyu; pacman --noconfirm -S aria2 base-devel ccache git git-lfs grep inetutils linux-tools lzip nano openssh procps sudo tree vivid wget; yes | LC_ALL=en_US.UTF-8 pacman -Scc"
 	docker export --output=base.tar manjarowsl
 	docker rm -f manjarowsl
 
