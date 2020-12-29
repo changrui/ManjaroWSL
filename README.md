@@ -2,8 +2,8 @@
 Manjaro on WSL2 (Windows 10 FCU or later) based on [wsldl](https://github.com/yuk7/wsldl).
 
 ![screenshot](https://raw.githubusercontent.com/sileshn/ManjaroWSL/main/img/screenshot.png)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-![License](https://img.shields.io/github/license/yosukes-dev/FedoraWSL.svg?style=flat-square)
+[![Github All Releases](https://img.shields.io/github/downloads/sileshn/ManjaroWSL/total.svg?style=flat-square)](https://github.com/sileshn/ManjaroWSL/releases)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![License](https://img.shields.io/github/license/yosukes-dev/FedoraWSL.svg?style=flat-square)
 
 ## 💻 Requirements
 * For x64 systems: Version 1903 or higher, with Build 18362 or higher.
