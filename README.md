@@ -9,11 +9,11 @@ Manjaro on WSL2 (Windows 10 FCU or later) based on [wsldl](https://github.com/yu
 * For x64 systems: Version 1903 or higher, with Build 18362 or higher.
 * For ARM64 systems: Version 2004 or higher, with Build 19041 or higher.
 * Builds lower than 18362 do not support WSL 2.
-* Enable Windows Subsystem for Linux feature.
+* Enable Windows Subsystem for Linux feature. Open PowerShell as Administrator and run:
 ```cmd
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
-* Enable Virtual Machine feature
+* Enable Virtual Machine feature. Open PowerShell as Administrator and run:
 ```cmd
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
