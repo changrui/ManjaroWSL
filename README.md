@@ -146,3 +146,15 @@ Copy the Manjaro.zip file to a safe location and run the command below to clean.
 make clean
 
 ```
+
+## How to run docker in ManjaroWSL without using docker desktop
+
+Install docker.
+```dos
+sudo pacman -S docker
+
+```
+
+Follow [this](https://blog.nillsf.com/index.php/2020/06/29/how-to-automatically-start-the-docker-daemon-on-wsl2/) blog post for further details on how to set it up.
+
+[![Screenshot-2021-01-27-175029.png](https://i.postimg.cc/Z5vGPXwn/Screenshot-2021-01-27-175029.png)](https://postimg.cc/fVZqDqnQ)
